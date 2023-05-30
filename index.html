@@ -2,6 +2,16 @@
 <html>
   <head>
     <title>Время с секундами</title>
+     <style>
+      /* Центрируем содержимое div-блока */
+      #time, #my_div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: 5em;
+      }
+    </style>
     <script>
       function updateTime() {
         var now = new Date();
@@ -22,7 +32,9 @@
     </script>
   </head>
   <body>
-    <h1>Текущее время</h1>
-    <h2><div id="time"></div></h2>
+    <div id="my_div">
+      <h1>Текущее время</h1>
+      <h2><div id="time"></div></h2>
+    </div>
   </body>
 </html>

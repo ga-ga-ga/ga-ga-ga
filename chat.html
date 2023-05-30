@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Чат</title>
+  </head>
+  <body>
+    <h1>Чат</h1>
+    <div id="chat-window"></div>
+    <form id="chat-form">
+      <input type="text" id="username-input" placeholder="Введите ваше имя">
+      <input type="text" id="message-input" placeholder="Введите сообщение">
+      <button type="submit">Отправить</button>
+    </form>
+    
+    <script>
+      var chatWindow = document.getElementById('chat-window');
+      var chatForm = document.getElementById('chat-form');
+      
+      chatForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Отменить перезагрузку страницы
+        
+        // Получение значений из полей ввода
+        var username = document.getElementById('username-input').value;
+        var message = document.getElementById('message-input').value;
+        
+        // Формирование сообщения
+        var messageHTML = '<strong>' + username + ':</strong> ' + message + '<br>';
+        
+        // Добавление сообщения в окно чата
+        chatWindow.innerHTML += messageHTML;
+        
+        // Очистка поля ввода сообщения
+        document.getElementById('message-input').value = '';
+      });
+    </script>
+  </body>
+</html>
